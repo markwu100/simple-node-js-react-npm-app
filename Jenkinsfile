@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         CI = 'true'
+        // add some dummy items for test
     }
     stages {
         stage('Build') {

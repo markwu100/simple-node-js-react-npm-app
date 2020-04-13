@@ -1,7 +1,6 @@
 pipeline {
     agent any
     environment {
-        // Dummy Items for test;
         CI = 'true'
     }
     stages {

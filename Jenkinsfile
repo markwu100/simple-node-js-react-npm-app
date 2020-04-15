@@ -30,7 +30,6 @@ pipeline {
         }
         success {
             echo 'I succeeeded!'
-            mail bcc: '', body: 'The build has been success!', cc: '', from: '', replyTo: '', subject: 'Outcome of the build of the Jenkins Pipeline', to: 'feng.wu.it@gmail.com'
         }
         unstable {
             echo 'I am unstable :/'

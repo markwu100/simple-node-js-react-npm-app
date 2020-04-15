@@ -21,5 +21,25 @@ pipeline {
                 sh './jenkins/scripts/kill.sh'
             }
         }
+        
+        post {
+        always {
+            echo 'One way or another, I have finished'
+            deleteDir() /* clean up our workspace */
+        }
+        success {
+            echo 'I succeeeded!'
+            mail bcc: '', body: 'The build has been success!', cc: '', from: '', replyTo: '', subject: 'Outcome of the build of the Jenkins Pipeline', to: 'feng.wu.it@gmail.com'
+        }
+        unstable {
+            echo 'I am unstable :/'
+        }
+        failure {
+            echo 'I failed :('
+        }
+        changed {
+            echo 'Things were different before...'
+            }   
+        }
     }
 }
